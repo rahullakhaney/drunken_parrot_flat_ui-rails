@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DummyApp</title>
+  <%= stylesheet_link_tag    'start-here', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'start-here', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body data-spy="scroll" data-target="#sidenav" data-offset="100">
+
+<%= yield %>
+
+<script>window.prettyPrint && prettyPrint();</script>
+</body>
+</html>
