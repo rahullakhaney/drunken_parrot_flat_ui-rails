@@ -74,7 +74,7 @@ module Drunken
 				gsub_file File.join(gem_assets_dir, "less", "drunken-parrot", "fonts", "source-sans.less"), /..\/fonts\//, ""
 
 				# icons.less
-				gsub_file File.join(gem_assets_dir, "less", "drunken-parrot", "modules", "icons.less"), /..\/fonts\//, ""
+				gsub_file File.join(gem_assets_dir, "less", "drunken-parrot", "modules", "icons.less"), /..\/fonts\//, "/assets/drunken-parrot/"
 
 				# demo.less
 				gsub_file File.join(gem_assets_dir, "less", "drunken-parrot", "demo.less"), /..\/fonts\//, ""
