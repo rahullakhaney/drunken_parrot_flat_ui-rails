@@ -42,6 +42,13 @@ module Drunken
 				gsub_file 'config/initializers/assets.rb', /^Rails\.application\.config\.assets\.precompile\s+.+/ do |match|
 					"Rails.application.config.assets.precompile += %w( index.css index.js documentation.css documentation.js start-here.css start-here.js )"
 				end
+
+				assets_file = 'config/initializers/assets.rb'
+				content = File.read(assets_file)
+
+		        unless content.match(/^Rails\.application\.config\.assets\.precompile\s+.+/)
+            		insert_into_file assets_file, "Rails.application.config.assets.precompile += %w( index.css index.js documentation.css documentation.js start-here.css start-here.js )", :after => "# Rails.application.config.assets.precompile += %w( search.js )\n"
+          		end				
 			end
 		end
 	end
