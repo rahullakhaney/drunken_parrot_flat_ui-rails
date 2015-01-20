@@ -1,0 +1,1 @@
+require 'drunken_parrot_flat_ui/railss'
