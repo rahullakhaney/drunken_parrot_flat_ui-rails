@@ -37,7 +37,10 @@ module DrunkenParrotFlatUi
 				copy_file "../templates/documentation.html.erb", "app/views/layouts/documentation.html.erb"
 
 				copy_file "../templates/drunkenparrotflatui_demo_controller.rb", "app/controllers/drunkenparrotflatui_demo_controller.rb"
-				copy_file "../templates/assets.rb", "config/initializers/assets.rb"
+
+				gsub_file 'config/initializers/assets.rb', /^Rails\.application\.config\.assets\.precompile\s+.+/ do |match|
+					"Rails.application.config.assets.precompile += %w( index.css index.js documentation.css documentation.js start-here.css start-here.js )"
+				end
 			end
 		end
 	end
