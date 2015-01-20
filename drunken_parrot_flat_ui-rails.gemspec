@@ -18,9 +18,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency     'less-rails-bootstrap', '~> 3.3.1'
-
-  spec.add_development_dependency "bundler", "~> 1.7"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency 'rails',  ['>= 3.1', '<= 4.2']
+  spec.add_dependency 'less-rails-bootstrap',    '>= 3.2.0'
+  spec.add_dependency 'jquery-rails',            '>= 3.1.1'
+  spec.add_dependency 'jquery-ui-rails',         '>= 5.0.0'
 end
