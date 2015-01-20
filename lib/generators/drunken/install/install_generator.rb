@@ -97,7 +97,7 @@ module Drunken
 				# DEMO HTML patches
 				# documentation.html
 				documentation_file = File.join(gem_assets_dir, "demo", "drunken-parrot", "documentation.html")
-				gsub_file documentation_file, /images\//, ""
+				gsub_file documentation_file, /images\//, "/assets/drunken-parrot/"
 
 		        # Remove everything before '<body\s+data' tag and after 'jquery.min.js', inclusive
 		        new_documentation_file = File.open("#{documentation_file}.erb", "w")
@@ -113,7 +113,7 @@ module Drunken
 
 		        # index.html
 		        index_file = File.join(gem_assets_dir, "demo", "drunken-parrot", "index.html")
-		        gsub_file index_file, /images\//, ""
+		        gsub_file index_file, /images\//, "/assets/drunken-parrot/"
 
 		        # Remove everything before '<body\s+data' tag and after 'Bootstrap', inclusive
 		        new_index_file = File.open("#{index_file}.erb", "w")
@@ -129,7 +129,7 @@ module Drunken
 
 		        # start_here.html
 		        start_here_file = File.join(gem_assets_dir, "demo", "drunken-parrot", "start_here.html")
-		        gsub_file start_here_file, /images\//, ""
+		        gsub_file start_here_file, /images\//, "/assets/drunken-parrot/"
 
 		        # Remove everything before '<body\s+data' tag and after 'jquery.min.js', inclusive
 		        new_start_here_file = File.open("#{start_here_file}.erb", "w")
