@@ -40,14 +40,14 @@ module Drunken
 				copy_file File.join(demo_templates_dir, "drunkenparrotflatui_demo_controller.rb"), "app/controllers/drunkenparrotflatui_demo_controller.rb"
 
 				gsub_file 'config/initializers/assets.rb', /^Rails\.application\.config\.assets\.precompile\s+.+/ do |match|
-					"Rails.application.config.assets.precompile += %w( index.css index.js documentation.css documentation.js start_here.css start_here.js )"
+					"Rails.application.config.assets.precompile += %w( drunken-parrot/index.css drunken-parrot/index.js drunken-parrot/documentation.css drunken-parrot/documentation.js drunken-parrot/start_here.css drunken-parrot/start_here.js )"
 				end
 
 				assets_file = 'config/initializers/assets.rb'
 				content = File.read(assets_file)
 
 		        unless content.match(/^Rails\.application\.config\.assets\.precompile\s+.+/)
-            		insert_into_file assets_file, "Rails.application.config.assets.precompile += %w( index.css index.js documentation.css documentation.js start_here.css start_here.js )", :after => "# Rails.application.config.assets.precompile += %w( search.js )\n"
+            		insert_into_file assets_file, "Rails.application.config.assets.precompile += %w( drunken-parrot/index.css drunken-parrot/index.js drunken-parrot/documentation.css drunken-parrot/documentation.js drunken-parrot/start_here.css drunken-parrot/start_here.js )", :after => "# Rails.application.config.assets.precompile += %w( search.js )\n"
           		end				
 			end
 		end
