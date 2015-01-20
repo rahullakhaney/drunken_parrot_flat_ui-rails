@@ -27,15 +27,15 @@ module Drunken
 	        	directory File.join(premium_dir, "css"), File.join(gem_assets_dir, "stylesheets", "drunken-parrot")
 
 	        	# Demo page assets
-	        	copy_file File.join(premium_dir, "bootstrap", "css", "prettify.css"), File.join(gem_assets_dir, "demo", "drunken-parrot", "prettify.css")
-	        	copy_file File.join(premium_dir, "bootstrap", "js", "prettify.js"), File.join(gem_assets_dir, "demo", "drunken-parrot", "prettify.js")
-	        	copy_file File.join(premium_dir, "documentation.html"), File.join(gem_assets_dir, "demo", "drunken-parrot", "documentation.html")
-	        	copy_file File.join(premium_dir, "index.html"), File.join(gem_assets_dir, "demo", "drunken-parrot", "index.html")
-	        	copy_file File.join(premium_dir, "start-here.html"), File.join(gem_assets_dir, "demo", "drunken-parrot", "start_here.html")
+	        	copy_file File.join(premium_dir, "bootstrap", "css", "prettify.css"), File.join(gem_assets_dir, "demo", "drunken-parrot", "prettify.css"), :force => true
+	        	copy_file File.join(premium_dir, "bootstrap", "js", "prettify.js"), File.join(gem_assets_dir, "demo", "drunken-parrot", "prettify.js"), :force => true
+	        	copy_file File.join(premium_dir, "documentation.html"), File.join(gem_assets_dir, "demo", "drunken-parrot", "documentation.html"), :force => true
+	        	copy_file File.join(premium_dir, "index.html"), File.join(gem_assets_dir, "demo", "drunken-parrot", "index.html"), :force => true
+	        	copy_file File.join(premium_dir, "start-here.html"), File.join(gem_assets_dir, "demo", "drunken-parrot", "start_here.html"), :force => true
 			end
 
 			def add_assets
-				copy_file "drunken-parrot.js", "app/assets/javascripts/drunken-parrot/drunken-parrot.js"
+				copy_file "drunken-parrot.js", "app/assets/javascripts/drunken-parrot/drunken-parrot.js", :force => true
 
 		        # Handle JS Manifest
 		        js_manifest = "app/assets/javascripts/application.js"
@@ -46,7 +46,7 @@ module Drunken
             			insert_into_file js_manifest, "//= require drunken-parrot/drunken-parrot\n", :after => "jquery\n"
           			end
 		        else
-		        	copy_file "application.js", js_manifest
+		        	copy_file "application.js", js_manifest, :force => true
 		        end
 
 		        # Handle CSS Manifest
@@ -59,7 +59,7 @@ module Drunken
 		        		insert_into_file css_manifest, style_require_block, :after => "require_self\n"
 		        	end
 		        else
-		        	copy_file "application.css", css_manifest
+		        	copy_file "application.css", css_manifest, :force => true
 		        end
 			end
 

@@ -22,22 +22,22 @@ module Drunken
 				gem_assets_dir = File.expand_path("../../../../../app/assets", __FILE__)
 				demo_templates_dir = File.expand_path("../../../../../lib/generators/drunken/demo/templates", __FILE__)
 
-				copy_file "index.html.erb", "app/views/drunkenparrotflatui_demo/index.html.erb"
-				copy_file File.join(demo_templates_dir, "index.js"), File.join(gem_assets_dir, "javascripts", "drunken-parrot", "index.js")
-				copy_file File.join(demo_templates_dir, "index.css"), File.join(gem_assets_dir, "stylesheets", "drunken-parrot", "index.css")
-				copy_file File.join(demo_templates_dir, "index.html.erb"), "app/views/layouts/index.html.erb"
+				copy_file "index.html.erb", "app/views/drunkenparrotflatui_demo/index.html.erb", :force => true
+				copy_file File.join(demo_templates_dir, "index.js"), File.join(gem_assets_dir, "javascripts", "drunken-parrot", "index.js"), :force => true
+				copy_file File.join(demo_templates_dir, "index.css"), File.join(gem_assets_dir, "stylesheets", "drunken-parrot", "index.css"), :force => true
+				copy_file File.join(demo_templates_dir, "index.html.erb"), "app/views/layouts/index.html.erb", :force => true
 
-				copy_file "start_here.html.erb", "app/views/drunkenparrotflatui_demo/start_here.html.erb"
-				copy_file File.join(demo_templates_dir, "start_here.js"), File.join(gem_assets_dir, "javascripts", "drunken-parrot", "start_here.js")
-				copy_file File.join(demo_templates_dir, "start_here.css"), File.join(gem_assets_dir, "stylesheets", "drunken-parrot", "start_here.css")
-				copy_file File.join(demo_templates_dir, "start_here.html.erb"), "app/views/layouts/start_here.html.erb"
+				copy_file "start_here.html.erb", "app/views/drunkenparrotflatui_demo/start_here.html.erb", :force => true
+				copy_file File.join(demo_templates_dir, "start_here.js"), File.join(gem_assets_dir, "javascripts", "drunken-parrot", "start_here.js"), :force => true
+				copy_file File.join(demo_templates_dir, "start_here.css"), File.join(gem_assets_dir, "stylesheets", "drunken-parrot", "start_here.css"), :force => true
+				copy_file File.join(demo_templates_dir, "start_here.html.erb"), "app/views/layouts/start_here.html.erb", :force => true
 
-				copy_file "documentation.html.erb", "app/views/drunkenparrotflatui_demo/documentation.html.erb"				
-				copy_file File.join(demo_templates_dir, "documentation.js"), File.join(gem_assets_dir, "javascripts", "drunken-parrot", "documentation.js")
-				copy_file File.join(demo_templates_dir, "documentation.css"), File.join(gem_assets_dir, "stylesheets", "drunken-parrot", "documentation.css")
-				copy_file File.join(demo_templates_dir, "documentation.html.erb"), "app/views/layouts/documentation.html.erb"
+				copy_file "documentation.html.erb", "app/views/drunkenparrotflatui_demo/documentation.html.erb", :force => true
+				copy_file File.join(demo_templates_dir, "documentation.js"), File.join(gem_assets_dir, "javascripts", "drunken-parrot", "documentation.js"), :force => true
+				copy_file File.join(demo_templates_dir, "documentation.css"), File.join(gem_assets_dir, "stylesheets", "drunken-parrot", "documentation.css"), :force => true
+				copy_file File.join(demo_templates_dir, "documentation.html.erb"), "app/views/layouts/documentation.html.erb", :force => true
 
-				copy_file File.join(demo_templates_dir, "drunkenparrotflatui_demo_controller.rb"), "app/controllers/drunkenparrotflatui_demo_controller.rb"
+				copy_file File.join(demo_templates_dir, "drunkenparrotflatui_demo_controller.rb"), "app/controllers/drunkenparrotflatui_demo_controller.rb", :force => true
 
 				gsub_file 'config/initializers/assets.rb', /^Rails\.application\.config\.assets\.precompile\s+.+/ do |match|
 					"Rails.application.config.assets.precompile += %w( drunken-parrot/index.css drunken-parrot/index.js drunken-parrot/documentation.css drunken-parrot/documentation.js drunken-parrot/start_here.css drunken-parrot/start_here.js )"
