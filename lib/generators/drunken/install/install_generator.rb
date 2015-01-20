@@ -135,7 +135,7 @@ module Drunken
 		        new_start_here_file = File.open("#{start_here_file}.erb", "w")
 		        include_line = false
 		        IO.foreach(start_here_file) do |line|
-		          include_line = false if line =~ /jquery.min.js/
+		          include_line = false if line =~ /jquery\/1.11.0\/jquery.min.js/
 
 		          new_start_here_file.write line if include_line
 
