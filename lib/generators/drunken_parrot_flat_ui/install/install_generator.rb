@@ -3,7 +3,7 @@ require 'pathname'
 
 module DrunkenParrotFlatUi
 	module Generators
-		class InstallGenerator < Rails::Generators::Base		
+		class InstallGenerator < Rails::Generators::Base
 			desc "This generator will copies licensed Drunken Parrot Flat UI files to drunken_parrot_flat_ui-rails gem."			
 			argument :drunkenparrotflatui_dir, :type => :string, :banner => "<Licensed Drunken Parrot Flat UI directory>"
 			source_root File.expand_path("../templates", __FILE__)
