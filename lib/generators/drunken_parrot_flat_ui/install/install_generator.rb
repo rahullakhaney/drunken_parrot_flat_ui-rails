@@ -128,20 +128,20 @@ module DrunkenParrotFlatUi
 		        new_index_file.close
 
 		        # start-here.html
-		        start-here_file = File.join(gem_assets_dir, "demo", "drunken-parrot", "start-here.html")
-		        gsub_file start-here_file, /images\//, ""
+		        start_here_file = File.join(gem_assets_dir, "demo", "drunken-parrot", "start-here.html")
+		        gsub_file start_here_file, /images\//, ""
 
 		        # Remove everything before '<body\s+data' tag and after 'jquery.min.js', inclusive
-		        new_start-here_file = File.open("#{start-here_file}.erb", "w")
+		        new_start_here_file = File.open("#{start_here_file}.erb", "w")
 		        include_line = false
-		        IO.foreach(start-here_file) do |line|
+		        IO.foreach(start_here_file) do |line|
 		          include_line = false if line =~ /jquery.min.js/
 
-		          new_start-here_file.write line if include_line
+		          new_start_here_file.write line if include_line
 
 		          include_line = true if line =~ /<body\s+data/
 		        end
-		        new_start-here_file.close
+		        new_start_here_file.close
 			end
 		end
 	end
