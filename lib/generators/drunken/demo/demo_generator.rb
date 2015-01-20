@@ -1,7 +1,7 @@
 require 'rails/generators'
 require 'pathname'
 
-module DrunkenParrotFlatUi
+module Drunken
 	module Generators
 		class DemoGenerator < Rails::Generators::Base
 			desc "This generator will setup Drunken Parrot Flat UI Demo page."
