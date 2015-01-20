@@ -1,6 +1,15 @@
 class DrunkenparrotflatuiDemoController < ApplicationController
   layout :layout_for_page
 
+  def index
+  end
+
+  def documentation
+  end
+
+  def start-here
+  end
+
   private
 
   def layout_for_page
