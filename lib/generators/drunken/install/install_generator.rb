@@ -1,7 +1,7 @@
 require 'rails/generators'
 require 'pathname'
 
-module DrunkenParrotFlatUi
+module Drunken
 	module Generators
 		class InstallGenerator < Rails::Generators::Base
 			desc "This generator will copies licensed Drunken Parrot Flat UI files to drunken_parrot_flat_ui-rails gem."			
