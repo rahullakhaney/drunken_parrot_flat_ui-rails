@@ -7,7 +7,7 @@ class DrunkenparrotflatuiDemoController < ApplicationController
   def documentation
   end
 
-  def start-here
+  def start_here
   end
 
   private
@@ -18,8 +18,8 @@ class DrunkenparrotflatuiDemoController < ApplicationController
       'index'
     when 'documentation'
       'documentation'
-    when 'start-here'
-      'start-here'      
+    when 'start_here'
+      'start_here'      
     else
       'application'
     end

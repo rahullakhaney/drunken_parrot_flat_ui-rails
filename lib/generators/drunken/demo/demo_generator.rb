@@ -15,7 +15,7 @@ module Drunken
 			end
 
 			def generate_demo_controller
-				generate "controller drunkenparrotflatui_demo index documentation start-here --no-helper --no-test-framework --no-assets"
+				generate "controller drunkenparrotflatui_demo index documentation start_here --no-helper --no-test-framework --no-assets"
 			end
 
 			def add_demo_assets
@@ -27,10 +27,10 @@ module Drunken
 				copy_file File.join(demo_templates_dir, "index.css"), File.join(gem_assets_dir, "stylesheets", "drunken-parrot", "index.css")
 				copy_file File.join(demo_templates_dir, "index.html.erb"), "app/views/layouts/index.html.erb"
 
-				copy_file "start-here.html.erb", "app/views/drunkenparrotflatui_demo/start-here.html.erb"
-				copy_file File.join(demo_templates_dir, "start-here.js"), File.join(gem_assets_dir, "javascripts", "drunken-parrot", "start-here.js")
-				copy_file File.join(demo_templates_dir, "start-here.css"), File.join(gem_assets_dir, "stylesheets", "drunken-parrot", "start-here.css")
-				copy_file File.join(demo_templates_dir, "start-here.html.erb"), "app/views/layouts/start-here.html.erb"
+				copy_file "start_here.html.erb", "app/views/drunkenparrotflatui_demo/start_here.html.erb"
+				copy_file File.join(demo_templates_dir, "start_here.js"), File.join(gem_assets_dir, "javascripts", "drunken-parrot", "start_here.js")
+				copy_file File.join(demo_templates_dir, "start_here.css"), File.join(gem_assets_dir, "stylesheets", "drunken-parrot", "start_here.css")
+				copy_file File.join(demo_templates_dir, "start_here.html.erb"), "app/views/layouts/start_here.html.erb"
 
 				copy_file "documentation.html.erb", "app/views/drunkenparrotflatui_demo/documentation.html.erb"				
 				copy_file File.join(demo_templates_dir, "documentation.js"), File.join(gem_assets_dir, "javascripts", "drunken-parrot", "documentation.js")
@@ -40,14 +40,14 @@ module Drunken
 				copy_file File.join(demo_templates_dir, "drunkenparrotflatui_demo_controller.rb"), "app/controllers/drunkenparrotflatui_demo_controller.rb"
 
 				gsub_file 'config/initializers/assets.rb', /^Rails\.application\.config\.assets\.precompile\s+.+/ do |match|
-					"Rails.application.config.assets.precompile += %w( index.css index.js documentation.css documentation.js start-here.css start-here.js )"
+					"Rails.application.config.assets.precompile += %w( index.css index.js documentation.css documentation.js start_here.css start_here.js )"
 				end
 
 				assets_file = 'config/initializers/assets.rb'
 				content = File.read(assets_file)
 
 		        unless content.match(/^Rails\.application\.config\.assets\.precompile\s+.+/)
-            		insert_into_file assets_file, "Rails.application.config.assets.precompile += %w( index.css index.js documentation.css documentation.js start-here.css start-here.js )", :after => "# Rails.application.config.assets.precompile += %w( search.js )\n"
+            		insert_into_file assets_file, "Rails.application.config.assets.precompile += %w( index.css index.js documentation.css documentation.js start_here.css start_here.js )", :after => "# Rails.application.config.assets.precompile += %w( search.js )\n"
           		end				
 			end
 		end

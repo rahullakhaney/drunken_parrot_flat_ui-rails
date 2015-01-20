@@ -31,7 +31,7 @@ module Drunken
 	        	copy_file File.join(premium_dir, "bootstrap", "js", "prettify.js"), File.join(gem_assets_dir, "demo", "drunken-parrot", "prettify.js")
 	        	copy_file File.join(premium_dir, "documentation.html"), File.join(gem_assets_dir, "demo", "drunken-parrot", "documentation.html")
 	        	copy_file File.join(premium_dir, "index.html"), File.join(gem_assets_dir, "demo", "drunken-parrot", "index.html")
-	        	copy_file File.join(premium_dir, "start-here.html"), File.join(gem_assets_dir, "demo", "drunken-parrot", "start-here.html")
+	        	copy_file File.join(premium_dir, "start-here.html"), File.join(gem_assets_dir, "demo", "drunken-parrot", "start_here.html")
 			end
 
 			def add_assets
@@ -127,8 +127,8 @@ module Drunken
 		        end
 		        new_index_file.close
 
-		        # start-here.html
-		        start_here_file = File.join(gem_assets_dir, "demo", "drunken-parrot", "start-here.html")
+		        # start_here.html
+		        start_here_file = File.join(gem_assets_dir, "demo", "drunken-parrot", "start_here.html")
 		        gsub_file start_here_file, /images\//, ""
 
 		        # Remove everything before '<body\s+data' tag and after 'jquery.min.js', inclusive
