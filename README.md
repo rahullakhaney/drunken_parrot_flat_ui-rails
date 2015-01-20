@@ -48,9 +48,9 @@ It will install the `drunkenparrotflatui_demo_controller` and 3 three views incl
 You visit it via
 
 ```ruby
-http://0.0.0.0:3000/drunkenparrotflatui_demo_controller/index
-http://0.0.0.0:3000/drunkenparrotflatui_demo_controller/documentation
-http://0.0.0.0:3000/drunkenparrotflatui_demo_controller/start_here
+http://0.0.0.0:3000/drunkenparrotflatui_demo/index
+http://0.0.0.0:3000/drunkenparrotflatui_demo/documentation
+http://0.0.0.0:3000/drunkenparrotflatui_demo/start_here
 ```
 
 ## Basic CSS Usage
