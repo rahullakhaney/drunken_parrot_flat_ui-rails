@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'less-rails-bootstrap',    '>= 3.2.0'
   spec.add_dependency 'jquery-rails',            '>= 3.1.1'
   spec.add_dependency 'jquery-ui-rails',         '>= 5.0.0'
-
+  spec.post_install_message = "" \
   "**********************************************\n\n" \
   "Run `rails generate drunken:install <Licensed Drunken Parrot Flat UI directory>` to copy licensed files to this gem.\n" \
   "Run `rails generate drunken:demo` to install demo page to your rails app\n\n" \
