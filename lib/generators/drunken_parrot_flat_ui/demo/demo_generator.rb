@@ -1,4 +1,4 @@
-require 'rails/generators'
+require 'rails/generators/base'
 require 'pathname'
 
 module DrunkenParrotFlatUi
