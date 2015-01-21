@@ -35,7 +35,8 @@ module Drunken
 			end
 
 			def add_assets
-				copy_file "drunken-parrot.js", "app/assets/javascripts/drunken-parrot/drunken-parrot.js", :force => true
+				gem_assets_dir = File.expand_path("../../../../../app/assets", __FILE__)
+				copy_file "drunken-parrot.js", File.join(gem_assets_dir, "javascripts", "drunken-parrot", "drunken-parrot.js"), :force => true
 
 		        # Handle JS Manifest
 		        js_manifest = "app/assets/javascripts/application.js"
